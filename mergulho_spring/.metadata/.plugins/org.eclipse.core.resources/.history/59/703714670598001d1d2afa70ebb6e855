@@ -1,0 +1,30 @@
+package com.algaworks.algalog.domain.service;
+
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Service;
+
+import com.algaworks.algalog.domain.model.EntregaModel;
+import com.algaworks.algalog.domain.model.StatusEntrega;
+import com.algaworks.algalog.domain.repository.EntregaRepository;
+
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class SolicitacaoEntregaService {
+
+	private EntregaRepository entregaRepository;
+	private ClienteRepository clienteRepository;
+	
+	@Transactional
+	public EntregaModel solicitar(EntregaModel entrega) {
+		entrega.setStatus(StatusEntrega.PENDENTE);
+		entrega.setDataPedido(LocalDateTime.now());
+		
+		
+		return entregaRepository.save(entrega);
+	}
+	
+}

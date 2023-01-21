@@ -1,0 +1,10 @@
+package com.algaworks.algalog.api.assembler;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class OcorrenciaAssembler {
+
+	
+	
+}

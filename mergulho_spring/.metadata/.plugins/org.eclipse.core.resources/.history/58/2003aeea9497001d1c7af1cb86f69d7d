@@ -1,0 +1,9 @@
+package com.algaworks.algalog.controller;
+
+
+@RestController
+@RequestMapping("/clientes")
+public class ClienteController {
+
+
+}
